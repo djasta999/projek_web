@@ -40,3 +40,12 @@ header{
     align-items: center;
     gap: 30px;
 }
+@media (max-width: 768px) {
+    .foto-profil{
+        width: 100px;
+    }
+    header{
+        flex-direction: column;
+        text-align: center;
+    }
+}
