@@ -1,0 +1,13 @@
+body{
+    color: #333;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
+.foto-profil{
+    width: 150px;
+    border-radius: 50%;
+}
+h1{
+    color: black;
+
+}
