@@ -50,13 +50,21 @@
             <h2>Kontak Saya</h2>
             <a href="https://github.com/djasta999">GitHub</a> 
             <a href="https://www.linkedin.com/in/iputu-djastasena-putra-b3b806392/">linkedln</a>
-            <form>
+            <form id="form-kontak">
                 <label for="nama_user">Nama:</label>
                 <input type="text" id="nama_user" name="nama">
-                <label for="email_user">Email</label>
+
+                <label for="email_user">Email:</label>
                 <input type="email" id="email_user" name="email">
+
                 <label for="pesan_user">Pesan:</label>
-                <textarea name="" id="pesan_user">masukan pesan</textarea>
+                <!-- Atribut 'name' sebaiknya diisi agar data textarea terkirim saat disubmit -->
+                <textarea id="pesan_user" name="pesan" placeholder="Masukkan pesan"></textarea>
+
+                <!-- Perbaikan: ID diletakkan di dalam tag, dan warna merah menggunakan Inline CSS -->
+                <p id="pesanError" style="color: red; font-size: 14px; display: none;">
+                    Pesan eror akan muncul di sini.
+                </p>
                 <button type="submit">Kirim</button>
             </form>
         </section>

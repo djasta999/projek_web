@@ -49,3 +49,6 @@ header{
         text-align: center;
     }
 }
+p:nth-of-type(2) {
+    color: red;
+}
