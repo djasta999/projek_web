@@ -52,3 +52,13 @@ header{
 p:nth-of-type(2) {
     color: red;
 }
+.dark-mode{
+    background-color: #1a1a1a;
+    color: #fff;
+    header, section, form, table, button{
+        background-color: #2a2a2a;
+    }
+    h1 {
+        color: #fff;
+    }
+}

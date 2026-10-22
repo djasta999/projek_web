@@ -37,3 +37,6 @@ tombol.addEventListener("click", function () {
     isChange = true;
   }
 });
+
+let tombol_gelap = document.getElementById("btn-theme");
+tombol_gelap.addEventListener("click", function(){document.body.classList.toggle("dark-mode")});
