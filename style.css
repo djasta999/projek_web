@@ -12,7 +12,7 @@ h1{
     margin: 0;
 }
 section{
-    background-color: white;
+    background-color: rgb(140, 192, 201);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -33,7 +33,7 @@ input, textarea{
 }
 header{
     display: flex;
-    background-color: white;
+    background-color: rgb(140, 192, 201);
     padding: 30px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -61,4 +61,16 @@ p:nth-of-type(2) {
     h1 {
         color: #fff;
     }
+}
+button{
+    color: aqua;
+}
+body{
+    background-image: url(latar.jpg);
+}
+button:hover{
+    color: blue;
+}
+button:active{
+    color: chocolate;
 }

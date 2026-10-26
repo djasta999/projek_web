@@ -40,3 +40,38 @@ tombol.addEventListener("click", function () {
 
 let tombol_gelap = document.getElementById("btn-theme");
 tombol_gelap.addEventListener("click", function(){document.body.classList.toggle("dark-mode")});
+
+// Langkah 1: Tangkap Elemen DOM
+const teksKutipan = document.getElementById("teks-kutipan");
+const btnKutipan = document.getElementById("btn-kutipan");
+
+// Langkah 2: Buat Fungsi Asynchronous
+async function ambilKutipan() {
+  // Langkah 3: Terapkan Error Handling (Try/Catch)
+  try {
+    // Langkah 4: Logika Pengambilan Data (Di dalam blok try)
+    // Tampilkan indikator visual ke user
+    teksKutipan.innerText = "Sedang memuat...";
+
+    // Mengambil data dari API
+    const response = await fetch("https://dummyjson.com/quotes/random");
+    
+    // Memproses respons mentah menjadi objek JavaScript
+    const data = await response.json();
+
+    // Mengubah teks paragraf dengan kombinasi kutipan dan penulis
+    teksKutipan.innerText = `"${data.quote}" - ${data.author}`;
+    
+  } catch (error) {
+    // Di dalam blok catch: Tampilkan pesan error jika terjadi masalah jaringan
+    teksKutipan.innerText = "Gagal memuat kutipan. Periksa koneksi Anda.";
+    console.error("Detail error:", error); // Opsional: untuk membantu debugging di konsol
+  }
+}
+
+// Langkah 5: Panggil Fungsi & Pasang Event Listener
+// Memanggil fungsi satu kali saat halaman pertama kali dimuat
+ambilKutipan();
+
+// Menjalankan fungsi setiap kali tombol diklik
+btnKutipan.addEventListener("click", ambilKutipan);
