@@ -12,7 +12,7 @@ h1{
     margin: 0;
 }
 section{
-    background-color: rgb(140, 192, 201);
+    background-color: rgb(108, 117, 119);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -33,7 +33,7 @@ input, textarea{
 }
 header{
     display: flex;
-    background-color: rgb(140, 192, 201);
+    background-color: rgb(165, 169, 170);
     padding: 30px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -63,7 +63,7 @@ p:nth-of-type(2) {
     }
 }
 button{
-    color: aqua;
+    color: rgb(34, 39, 39);
 }
 body{
     background-image: url(latar.jpg);
@@ -73,4 +73,21 @@ button:hover{
 }
 button:active{
     color: chocolate;
+}
+ul #daftar_repo{
+    list-style: none;
+    padding-left: 0;
+    margin: 0%;
+}
+.card-repo{
+    padding: 15px;
+    margin-bottom: 12px;
+    background-color: rgb(228, 223, 223);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(71, 79, 87);
+    text-decoration: none;
+    display: block;
+    a{
+        margin-bottom: 6px;
+    }
 }

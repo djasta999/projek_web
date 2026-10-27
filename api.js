@@ -38,11 +38,15 @@ export async function ambilRepoo() {
   let dataCache = localStorage.getItem("repo_cache");
       if (dataCache){
      let dataparsed = JSON.parse(dataCache).map(item => {
-        return `<li><a href="${item.html_url}">${item.name}</a></li>`;
+        return `<li
+         class="card-repo">
+         <a href="${item.html_url}">${item.name}</a>
+         <p>${item.description || "Tidak ada deskripsi"}</p>
+         </li>`;
       }).join('');
       daftar_repo.innerHTML = dataparsed;
       tampilkan_repo.innerText = "";
-      return;
+      return; 
     };
   try {
     tampilkan_repo.innerText = "Memuat daftar repositori...";
@@ -55,7 +59,11 @@ export async function ambilRepoo() {
       localStorage.setItem("repo_cache", JSON.stringify(repoLima))
       // 2. Memperbaiki penutupan sintaks kurung kurawal map() dan chaining join()
       let htmlRepoo = repoLima.map(item => {
-        return `<li><a href="${item.html_url}">${item.name}</a></li>`;
+        return `<li class="card-repo">
+         <a href="${item.html_url}">${item.name}</a>
+         <a href="${item.html_url}">${item.name}</a>
+         <p>${item.description || "Tidak ada deskripsi"}</p>
+         </li>`;
       }).join('');
       
       // 3. Memasukkan string HTML hasil chaining ke elemen DOM
