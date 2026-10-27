@@ -75,3 +75,39 @@ ambilKutipan();
 
 // Menjalankan fungsi setiap kali tombol diklik
 btnKutipan.addEventListener("click", ambilKutipan);
+
+let daftar_repo = document.getElementById("daftar_repo");
+let tampilkan_repo = document.getElementById("tampilkan_repo");
+
+async function ambilRepoo() {
+  try {
+    tampilkan_repo.innerText = "Memuat daftar repositori...";
+    const responRepo = await fetch("https://api.github.com/users/djasta999/repos");
+    
+    // 1. Memastikan respons sukses (ok) sebelum mengambil data
+    if (responRepo.ok) {
+      let dataRepoo = await responRepo.json();
+      let repoLima = dataRepoo.slice(0, 5);
+      
+      // 2. Memperbaiki penutupan sintaks kurung kurawal map() dan chaining join()
+      let htmlRepoo = repoLima.map(item => {
+        return `<li><a href="${item.html_url}">${item.name}</a></li>`;
+      }).join('');
+      
+      // 3. Memasukkan string HTML hasil chaining ke elemen DOM
+      daftar_repo.innerHTML = htmlRepoo;
+    } else {
+      // Menangani jika API GitHub merespons tapi statusnya error (misal 404/500)
+      tampilkan_repo.innerText = "Gagal memuat repositori.";
+    }
+  } catch (error) {
+    // Menangani error jaringan atau masalah tak terduga lainnya
+    console.error(error);
+    tampilkan_repo.innerText = "Terjadi kesalahan jaringan.";
+  }
+
+}
+ambilRepoo()
+
+
+  
